@@ -20,7 +20,19 @@ namespace LinkedListTraining_tests
             var expected = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 5, 4, 3, 2, 1 });
             var sut = new Solution();
             //Act
-            var actual = sut.ReverseList(input);
+            var actual = Solution.ReverseList(input);
+            //Assert
+            AssertLinkedLists.NodesHaveEqualValue(expected, actual);
+        }
+        [TestMethod]
+        public void ReverseList_SingleNumber_ReturnsNumber()
+        {
+            //Arrange
+            var input = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 2});
+            var expected = LinkedListBuilder.CreateSinglyLinkedList(new int[] { 2 });
+            var sut = new Solution();
+            //Act
+            var actual = Solution.ReverseList(input);
             //Assert
             AssertLinkedLists.NodesHaveEqualValue(expected, actual);
         }

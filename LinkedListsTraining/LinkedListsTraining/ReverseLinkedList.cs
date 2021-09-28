@@ -8,9 +8,25 @@ namespace LinkedListsTraining.ReverseLinkedList
 {
     public class Solution
     {
-        public ListNode ReverseList(ListNode head)
+        public static ListNode ReverseList(ListNode Head)
         {
-            throw new NotImplementedException();
+            if (Head == null) return Head;
+            else
+            {
+                MyLinkedList reverseList = new();
+                ListNode current = Head;
+
+                reverseList.AddAtHead(current.val);
+
+                while (current.next != null)
+                {
+                    current = current.next;
+                    reverseList.AddAtHead(current.val);
+
+                }
+
+                return reverseList.Head;
+            }
         }
     }
 }
